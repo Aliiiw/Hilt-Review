@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Hilt</string>
     <string name="test_info">From Res</string>
+    <string name="add">add...</string>
+    <string name="send">Send</string>
 </resources>
