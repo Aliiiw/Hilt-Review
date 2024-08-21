@@ -5,11 +5,22 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import dagger.hilt.android.AndroidEntryPoint
 import ir.alirahimi.hilt.databinding.ActivityMainBinding
+import ir.alirahimi.hilt.di.qualifier.UserFullName
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    @Inject
+    @UserFullName
+    lateinit var username: String
+
+//    @Inject
+//    lateinit var username: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +33,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
         binding.apply {
-
+            infoText.text = username
         }
     }
 }

@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import ir.alirahimi.hilt.di.qualifier.UserFullName
 import javax.inject.Singleton
 
 @Module
@@ -12,7 +13,11 @@ object MainModule {
 
     @Provides
     @Singleton
-    fun provideUsername() = "Ali Rahimi"
+    fun provideUsername(): String = "Ali Rahimi"
+
+    @Provides
+    @UserFullName
+    fun provideUserFullName(): String = "Ali Rahimi"
 
 
 }
