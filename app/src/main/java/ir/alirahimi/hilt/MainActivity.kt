@@ -8,19 +8,29 @@ import androidx.core.view.WindowInsetsCompat
 import dagger.hilt.android.AndroidEntryPoint
 import ir.alirahimi.hilt.databinding.ActivityMainBinding
 import ir.alirahimi.hilt.di.qualifier.UserFullName
+import ir.alirahimi.hilt.util.Constants
 import javax.inject.Inject
+import javax.inject.Named
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    @Inject
-    @UserFullName
-    lateinit var username: String
+//    @Inject
+//    @UserFullName
+//    lateinit var username: String
 
 //    @Inject
 //    lateinit var username: String
+
+//    @Inject
+//    @Named(Constants.NAMED_USER_NAME)
+//    lateinit var username: String
+
+    @Inject
+    @Named(Constants.NAMED_RES_STRING)
+    lateinit var username: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
